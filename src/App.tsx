@@ -1,25 +1,43 @@
-import "./App.css";
 import "@fontsource-variable/inter";
 
 import { Button } from "./components/Button/Button";
 import { Input } from "./components/Input/Input";
+import { AppContainer, ButtonWrapper, Heading1 } from "./App.styles";
 
 function App() {
   return (
-    <>
+    <AppContainer>
+      <Heading1>Personal Info</Heading1>
       <Input
-        label="Label"
+        label="Full Name"
+        placeholder="Jane Smith"
         onChange={(value) => {
           console.log("Input changed:", value);
         }}
       />
-      <Button
-        label="Submit"
-        onClick={() => {
-          console.log("Submit clicked");
+      <Input
+        label="Email"
+        placeholder="jane.smith@mail.com"
+        onChange={(value) => {
+          console.log("Input changed:", value);
         }}
       />
-    </>
+      <Input
+        label="Date of Birth"
+        placeholder="30-10-2000"
+        onChange={(value) => {
+          console.log("Input changed:", value);
+        }}
+      />
+      <ButtonWrapper>
+        <Button
+          label="Submit"
+          onClick={() => {
+            console.log("Submit clicked");
+          }}
+        />
+      </ButtonWrapper>
+    </AppContainer>
   );
 }
 
