@@ -41,4 +41,6 @@ export const StyledButton = styled.button`
     cursor: not-allowed;
     transform: none;
   }
+
+  -webkit-tap-highlight-color: transparent;
 `;

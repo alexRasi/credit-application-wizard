@@ -11,6 +11,7 @@ function App() {
       <Input
         label="Full Name"
         placeholder="Jane Smith"
+        type="text"
         onChange={(value) => {
           console.log("Input changed:", value);
         }}
@@ -18,6 +19,7 @@ function App() {
       <Input
         label="Email"
         placeholder="jane.smith@mail.com"
+        type="email"
         onChange={(value) => {
           console.log("Input changed:", value);
         }}
@@ -25,6 +27,7 @@ function App() {
       <Input
         label="Date of Birth"
         placeholder="30-10-2000"
+        type="text"
         onChange={(value) => {
           console.log("Input changed:", value);
         }}
