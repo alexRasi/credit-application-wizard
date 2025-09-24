@@ -1,9 +1,7 @@
 import "./App.css";
 
 function App() {
-  return;
-
-  <></>;
+  return <>Fairlo Credit Application Wizard</>;
 }
 
 export default App;
