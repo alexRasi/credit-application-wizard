@@ -1,8 +1,10 @@
+import { StyledButton } from "./Button.styles";
+
 type ButtonProps = {
   label: string;
   onClick: () => void;
 };
 
 export const Button = ({ label, onClick }: ButtonProps) => {
-  return <button onClick={onClick}>{label}</button>;
+  return <StyledButton onClick={onClick}>{label}</StyledButton>;
 };
