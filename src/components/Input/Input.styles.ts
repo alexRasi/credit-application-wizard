@@ -15,7 +15,7 @@ export const Label = styled.label`
 
 export const StyledInput = styled.input<{ $invalid?: boolean }>`
   padding: 8px 12px;
-  border: 2px solid #78716c;
+  border: 2px solid ${({ $invalid }) => ($invalid ? "#DC2626" : "#78716c")};
   border-radius: 8px;
   padding: 12px 16px;
 
