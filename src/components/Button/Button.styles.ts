@@ -22,7 +22,7 @@ export const StyledButton = styled.button`
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: scale(0.99);
     filter: brightness(0.95);
   }
 
