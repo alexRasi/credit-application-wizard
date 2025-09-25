@@ -16,6 +16,12 @@ export const StyledRadio = styled.input.attrs({ type: "radio" })`
   cursor: pointer;
   position: relative;
   margin: 0;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none; /* Safari/Chrome */
+  -moz-appearance: none; /* Firefox */
+  outline: none; /* remove UA focus ring */
+  -webkit-tap-highlight-color: transparent;
 
   &:checked {
     border-color: #009327;
@@ -31,6 +37,11 @@ export const StyledRadio = styled.input.attrs({ type: "radio" })`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  /* Optional: your own accessible focus style */
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgba(0, 147, 39, 0.4);
   }
 `;
 export const RadioLabel = styled.span`
