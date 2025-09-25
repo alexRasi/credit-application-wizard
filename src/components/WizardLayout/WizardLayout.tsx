@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
-import { Header, Heading1, ButtonWrapper } from "./WizardLayout.styles";
+import { Footer, Header, Heading1 } from "./WizardLayout.styles";
 import { Button } from "../Button/Button";
 
 type WizardLayoutProps = {
   title?: string;
   back?: ReactNode;
-  //   footer?: ReactNode;
+  footerAddon?: React.ReactNode;
   children: ReactNode;
   onSubmit?: () => void;
 };
@@ -14,7 +14,7 @@ export const WizardLayout = ({
   title,
   back,
   onSubmit,
-  //   footer,
+  footerAddon,
   children,
 }: WizardLayoutProps) => {
   return (
@@ -25,7 +25,8 @@ export const WizardLayout = ({
       </Header>
       {children}
       {/* {footer && <ButtonWrapper>{footer}</ButtonWrapper>} */}
-      <ButtonWrapper>
+      <Footer>
+        {footerAddon}
         <Button
           label="Continue"
           onClick={() => {
@@ -33,7 +34,7 @@ export const WizardLayout = ({
             onSubmit?.();
           }}
         />
-      </ButtonWrapper>
+      </Footer>
     </>
   );
 };

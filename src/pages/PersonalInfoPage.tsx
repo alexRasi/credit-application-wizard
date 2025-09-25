@@ -1,7 +1,7 @@
 import { Input } from "../components/Input/Input";
 import { WizardLayout } from "../components/WizardLayout/WizardLayout";
 
-export const PersonalInfo = () => {
+export const PersonalInfoPage = () => {
   return (
     <>
       <WizardLayout

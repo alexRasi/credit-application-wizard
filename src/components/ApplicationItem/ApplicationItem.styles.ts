@@ -8,9 +8,8 @@ export const Card = styled.article`
   border-radius: 8px;
   background: #fff;
   box-shadow: 0px 2px 4px 2px #00000026;
-  width: 332px;
-  max-width: 332px;
   box-sizing: border-box;
+  width: 100%;
 `;
 
 export const Info = styled.div`
@@ -52,4 +51,15 @@ export const DeleteButton = styled.button`
   border: none;
   cursor: pointer;
   margin-left: 16px;
+
+  transition: transform 0.1s ease,
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: scale(0.99);
+    filter: brightness(0.95);
+  }
 `;

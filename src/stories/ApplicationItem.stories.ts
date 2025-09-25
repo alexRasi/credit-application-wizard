@@ -13,7 +13,7 @@ const meta = {
     email: "john.doe@mail.com",
     employmentType: "Full time",
     income: 1000,
-    onDelete: () => alert("Delete clicked"),
+    onDelete: () => console.log("Delete clicked"),
   },
 } satisfies Meta<typeof ApplicationItem>;
 

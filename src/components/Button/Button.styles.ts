@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
   justify-content: center;
   border-radius: 100px;
   cursor: pointer;
-  width: 100%;
+  width: auto;
 
   transition:
     transform 0.1s ease,

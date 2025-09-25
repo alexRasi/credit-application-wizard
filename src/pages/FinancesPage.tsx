@@ -3,14 +3,20 @@ import { Radio } from "../components/Radio/Radio";
 import { Checkbox } from "../components/Checkbox/Checkbox";
 import { Input } from "../components/Input/Input";
 
-export const Finances = () => {
+export const FinancesPage = () => {
   return (
     <>
       <WizardLayout
         title="Finances"
         onSubmit={() => {
-          window.location.href = "/personal-info";
+          window.location.href = "/applications";
         }}
+        footerAddon={
+          <Checkbox
+            label="I accept the terms and conditions"
+            onChange={(checked) => console.log("termsAccepted:", checked)}
+          />
+        }
       >
         <Input
           label="Income"
@@ -37,11 +43,6 @@ export const Finances = () => {
           value="unemployed"
           label="Unemployed"
           onChange={(value) => console.log("employmentType:", value)}
-        />
-
-        <Checkbox
-          label="I accept the terms and conditions"
-          onChange={(checked) => console.log("termsAccepted:", checked)}
         />
       </WizardLayout>
     </>

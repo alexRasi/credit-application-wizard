@@ -5,12 +5,12 @@ export const Header = styled.header`
   align-items: cent //   justify-content: space-between;
     een;
 `;
-export const ButtonWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: auto;
-`;
+// export const ButtonWrapper = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   margin-top: auto;
+// `;
 
 export const Heading1 = styled.h1`
   font-weight: 700;
@@ -28,4 +28,13 @@ export const WizardContent = styled.main`
   display: flex;
   flex-direction: column;
   gap: 24px;
+`;
+
+export const Footer = styled.div`
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+  width: 100%;
 `;
