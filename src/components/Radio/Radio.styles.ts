@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const RadioWrapper = styled.label`
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px;
   cursor: pointer;
 `;

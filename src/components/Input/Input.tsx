@@ -5,7 +5,7 @@ type InputProps = {
   error?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-//TODO add placeholder and error styles
+//TODO add placeholder and error styles error border red
 
 export const Input = ({ label, error, id, ...props }: InputProps) => {
   return (

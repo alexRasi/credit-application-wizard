@@ -7,11 +7,13 @@ type WizardLayoutProps = {
   back?: ReactNode;
   //   footer?: ReactNode;
   children: ReactNode;
+  onSubmit?: () => void;
 };
 
 export const WizardLayout = ({
   title,
   back,
+  onSubmit,
   //   footer,
   children,
 }: WizardLayoutProps) => {
@@ -28,6 +30,7 @@ export const WizardLayout = ({
           label="Continue"
           onClick={() => {
             console.log("Continue clicked");
+            onSubmit?.();
           }}
         />
       </ButtonWrapper>

@@ -4,7 +4,12 @@ import { WizardLayout } from "../components/WizardLayout/WizardLayout";
 export const PersonalInfo = () => {
   return (
     <>
-      <WizardLayout title="Personal Info">
+      <WizardLayout
+        title="Personal Info"
+        onSubmit={() => {
+          window.location.href = "/finances";
+        }}
+      >
         <Input
           label="Full Name"
           placeholder="Jane Smith"

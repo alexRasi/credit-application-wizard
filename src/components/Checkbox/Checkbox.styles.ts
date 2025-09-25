@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CheckboxWrapper = styled.label`
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 8px;
   cursor: pointer;
 `;

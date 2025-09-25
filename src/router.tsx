@@ -4,8 +4,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { PersonalInfo } from "./pages/PersonalInfo";
+import { Finances } from "./pages/FinancesPage";
 
-const Finances = () => <div>Finances</div>;
 const Success = () => <div>Success</div>;
 const Applications = () => <div>Applications</div>;
 

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   display: flex;
-  align-items: center;
-  //   justify-content: space-between;
+  align-items: cent //   justify-content: space-between;
+    een;
 `;
 export const ButtonWrapper = styled.div`
   display: flex;

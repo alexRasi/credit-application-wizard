@@ -1,10 +1,9 @@
+import type { InputHTMLAttributes } from "react";
 import { RadioWrapper, StyledRadio, RadioLabel } from "./Radio.styles";
 
 type RadioProps = {
-  label: string;
-  checked: boolean;
-  onChange: () => void;
-};
+  label?: string;
+} & InputHTMLAttributes<HTMLInputElement>;
 
 export const Radio = ({ label, checked, onChange }: RadioProps) => {
   return (

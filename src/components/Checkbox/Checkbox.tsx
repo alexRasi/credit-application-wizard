@@ -1,3 +1,4 @@
+import type { InputHTMLAttributes } from "react";
 import {
   CheckboxLabel,
   CheckboxWrapper,
@@ -5,10 +6,8 @@ import {
 } from "./Checkbox.styles";
 
 type CheckboxProps = {
-  label: string;
-  checked: boolean;
-  onChange: () => void;
-};
+  label?: string;
+} & InputHTMLAttributes<HTMLInputElement>;
 
 export const Checkbox = ({ label, checked, onChange }: CheckboxProps) => {
   return (
