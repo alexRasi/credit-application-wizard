@@ -1,10 +1,11 @@
-// Input.tsx
 import { FieldWrapper, Label, StyledInput, ErrorText } from "./Input.styles";
 
 type InputProps = {
   label?: string;
   error?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
+
+//TODO add placeholder and error styles
 
 export const Input = ({ label, error, id, ...props }: InputProps) => {
   return (

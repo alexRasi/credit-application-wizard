@@ -3,8 +3,15 @@ import "@fontsource-variable/inter";
 import { Button } from "./components/Button/Button";
 import { Input } from "./components/Input/Input";
 import { AppContainer, ButtonWrapper, Heading1 } from "./App.styles";
+import { AppRouter } from "./router";
 
 function App() {
+  return (
+    <AppContainer>
+      <AppRouter />
+    </AppContainer>
+  );
+
   return (
     <AppContainer>
       <Heading1>Personal Info</Heading1>
