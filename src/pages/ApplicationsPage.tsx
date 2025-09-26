@@ -40,6 +40,54 @@ export const ApplicationsPage = () => {
           income={750}
           onDelete={() => console.log("Delete clicked")}
         />
+        <ApplicationItem
+          email="jack.brown@mail.com"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
+        <ApplicationItem
+          email="jack.brown@mail.com"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
+        <ApplicationItem
+          email="jack.brown@mail.com"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
+        <ApplicationItem
+          email="jack.brown@mail.com"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
+        <ApplicationItem
+          email="jack.brown@mail.com"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
+        <ApplicationItem
+          email="jack.brown@mail.com"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
+        <ApplicationItem
+          email="jack.brown@mail.com"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
+        <ApplicationItem
+          email="LAST ITEM"
+          employmentType="Freelance"
+          income={750}
+          onDelete={() => console.log("Delete clicked")}
+        />
       </WizardLayout>
     </>
   );

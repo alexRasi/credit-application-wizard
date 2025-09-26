@@ -1,5 +1,11 @@
 import type { ReactNode } from "react";
-import { Footer, Header, Heading1 } from "./WizardLayout.styles";
+import {
+  WizardContent,
+  Header,
+  Heading1,
+  Content,
+  Footer,
+} from "./WizardLayout.styles";
 import { Button } from "../Button/Button";
 
 type WizardLayoutProps = {
@@ -18,13 +24,13 @@ export const WizardLayout = ({
   children,
 }: WizardLayoutProps) => {
   return (
-    <>
+    <WizardContent>
       <Header>
         {back ?? <span />}
         {title && <Heading1>{title}</Heading1>}
+        <span />
       </Header>
-      {children}
-      {/* {footer && <ButtonWrapper>{footer}</ButtonWrapper>} */}
+      <Content>{children}</Content>
       <Footer>
         {footerAddon}
         <Button
@@ -35,6 +41,6 @@ export const WizardLayout = ({
           }}
         />
       </Footer>
-    </>
+    </WizardContent>
   );
 };
