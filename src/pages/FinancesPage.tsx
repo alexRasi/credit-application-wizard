@@ -1,4 +1,4 @@
-import { WizardLayout } from "../components/WizardLayout/WizardLayout";
+import { WizardLayout } from "./WizardLayout/WizardLayout";
 import { Radio } from "../components/Radio/Radio";
 import { Checkbox } from "../components/Checkbox/Checkbox";
 import { Input } from "../components/Input/Input";

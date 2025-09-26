@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { WizardLayout } from "../components/WizardLayout/WizardLayout";
+import { WizardLayout } from "./WizardLayout/WizardLayout";
 import styled from "styled-components";
 
 export const Message = styled.div`
@@ -23,7 +23,6 @@ export const Subtitle = styled.p`
   font-size: 20px;
   font-weight: 600;
   color: #171717;
-  //   margin-top: 24px
 `;
 
 export const SuccessPage = () => {

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Input } from "../components/Input/Input";
-import { WizardLayout } from "../components/WizardLayout/WizardLayout";
+import { WizardLayout } from "./WizardLayout/WizardLayout";
 
 export const PersonalInfoPage = () => {
   const navigate = useNavigate();

@@ -6,7 +6,7 @@ import {
   Content,
   Footer,
 } from "./WizardLayout.styles";
-import { Button } from "../Button/Button";
+import { Button } from "../../components/Button/Button";
 
 type WizardLayoutProps = {
   title?: string;

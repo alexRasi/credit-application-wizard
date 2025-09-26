@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ApplicationItem } from "../components/ApplicationItem/ApplicationItem";
-import { WizardLayout } from "../components/WizardLayout/WizardLayout";
+import { WizardLayout } from "./WizardLayout/WizardLayout";
 
 export const ApplicationsPage = () => {
   const navigate = useNavigate();
