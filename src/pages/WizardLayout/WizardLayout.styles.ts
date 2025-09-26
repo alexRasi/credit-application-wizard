@@ -25,6 +25,12 @@ export const WizardContent = styled.section`
   min-height: 0; /* allow inner scroll */
 `;
 
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
 export const Content = styled.div`
   flex: 1;
   min-height: 0; /* crucial for scrolling in flex columns */

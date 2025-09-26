@@ -5,6 +5,7 @@ import {
   Heading1,
   Content,
   Footer,
+  Form,
 } from "./WizardLayout.styles";
 import { Button } from "../../components/Button/Button";
 import { useFormContext } from "react-hook-form";
@@ -35,7 +36,7 @@ export const WizardLayout = ({
         {title && <Heading1>{title}</Heading1>}
         <span />
       </Header>
-      <form onSubmit={onSubmit} noValidate>
+      <Form onSubmit={onSubmit} noValidate>
         <Content>{children}</Content>
         <Footer>
           {footerAddon}
@@ -45,7 +46,7 @@ export const WizardLayout = ({
             disabled={formContext ? !isValid || isSubmitting : false}
           />
         </Footer>
-      </form>
+      </Form>
     </WizardContent>
   );
 };
