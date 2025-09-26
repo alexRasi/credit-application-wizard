@@ -29,6 +29,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-height: 0;
 `;
 
 export const Content = styled.div`
