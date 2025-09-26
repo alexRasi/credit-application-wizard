@@ -3,26 +3,27 @@ import { WizardLayout } from "../components/WizardLayout/WizardLayout";
 import styled from "styled-components";
 
 export const Message = styled.div`
-  margin: auto 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 8px;
+  gap: 24px;
 `;
 
 export const Title = styled.h2`
   margin: 0;
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 800;
+  font-size: 32px;
+  font-weight: 700;
+  color: #171717;
 `;
 
 export const Subtitle = styled.p`
   margin: 0;
-  font-size: 14px;
-  line-height: 1.3;
-  color: #4a4a4a;
+  font-size: 20px;
+  font-weight: 600;
+  color: #171717;
+  //   margin-top: 24px
 `;
 
 export const SuccessPage = () => {
