@@ -6,13 +6,12 @@ import {
 import { PersonalInfoPage } from "./pages/PersonalInfoPage";
 import { FinancesPage } from "./pages/FinancesPage";
 import { ApplicationsPage } from "./pages/ApplicationsPage";
-
-const Success = () => <div>Success</div>;
+import { SuccessPage } from "./pages/SuccessPage";
 
 const router = createBrowserRouter([
   { path: "/personal-info", element: <PersonalInfoPage /> },
   { path: "/finances", element: <FinancesPage /> },
-  { path: "/success", element: <Success /> },
+  { path: "/success", element: <SuccessPage /> },
   { path: "/applications", element: <ApplicationsPage /> },
   { path: "*", element: <Navigate to="/personal-info" replace /> },
 ]);

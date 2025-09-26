@@ -2,15 +2,15 @@ import { WizardLayout } from "../components/WizardLayout/WizardLayout";
 import { Radio } from "../components/Radio/Radio";
 import { Checkbox } from "../components/Checkbox/Checkbox";
 import { Input } from "../components/Input/Input";
+import { useNavigate } from "react-router-dom";
 
 export const FinancesPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <WizardLayout
         title="Finances"
-        onSubmit={() => {
-          window.location.href = "/applications";
-        }}
+        onSubmit={() => navigate("/success")}
         footerAddon={
           <Checkbox
             label="I accept the terms and conditions"

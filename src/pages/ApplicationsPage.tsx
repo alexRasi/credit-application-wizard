@@ -1,14 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import { ApplicationItem } from "../components/ApplicationItem/ApplicationItem";
 import { WizardLayout } from "../components/WizardLayout/WizardLayout";
 
 export const ApplicationsPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <WizardLayout
         title="Applications"
-        onSubmit={() => {
-          window.location.href = "/personal-info";
-        }}
+        onSubmit={() => navigate("/personal-info")}
       >
         <ApplicationItem
           email="john.doe@mail.com"

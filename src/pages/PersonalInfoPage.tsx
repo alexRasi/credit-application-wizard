@@ -1,14 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { Input } from "../components/Input/Input";
 import { WizardLayout } from "../components/WizardLayout/WizardLayout";
 
 export const PersonalInfoPage = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <WizardLayout
         title="Personal Info"
-        onSubmit={() => {
-          window.location.href = "/finances";
-        }}
+        onSubmit={() => navigate("/finances")}
       >
         <Input
           label="Full Name"
