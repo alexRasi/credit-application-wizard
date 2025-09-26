@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { FormEventHandler, ReactNode } from "react";
 import {
   WizardContent,
   Header,
@@ -7,13 +7,14 @@ import {
   Footer,
 } from "./WizardLayout.styles";
 import { Button } from "../../components/Button/Button";
+import { useFormContext } from "react-hook-form";
 
 type WizardLayoutProps = {
   title?: string;
   back?: ReactNode;
   footerAddon?: React.ReactNode;
   children: ReactNode;
-  onSubmit?: () => void;
+  onSubmit?: FormEventHandler<HTMLFormElement>;
 };
 
 export const WizardLayout = ({
@@ -23,6 +24,10 @@ export const WizardLayout = ({
   footerAddon,
   children,
 }: WizardLayoutProps) => {
+  const formContext = useFormContext();
+  const isValid = formContext?.formState?.isValid ?? false;
+  const isSubmitting = formContext?.formState?.isSubmitting ?? false;
+
   return (
     <WizardContent>
       <Header>
@@ -30,17 +35,17 @@ export const WizardLayout = ({
         {title && <Heading1>{title}</Heading1>}
         <span />
       </Header>
-      <Content>{children}</Content>
-      <Footer>
-        {footerAddon}
-        <Button
-          label="Continue"
-          onClick={() => {
-            console.log("Continue clicked");
-            onSubmit?.();
-          }}
-        />
-      </Footer>
+      <form onSubmit={onSubmit} noValidate>
+        <Content>{children}</Content>
+        <Footer>
+          {footerAddon}
+          <Button
+            label="Continue"
+            type="submit"
+            disabled={formContext ? !isValid || isSubmitting : false}
+          />
+        </Footer>
+      </form>
     </WizardContent>
   );
 };
