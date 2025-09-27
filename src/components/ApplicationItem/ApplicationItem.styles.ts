@@ -12,6 +12,11 @@ export const Card = styled.article`
   width: 100%;
 `;
 
+export const CardWrapper = styled.div`
+  padding: 4px 6px 8px 6px;
+  box-sizing: border-box;
+`;
+
 export const Info = styled.div`
   display: flex;
   flex-direction: column;

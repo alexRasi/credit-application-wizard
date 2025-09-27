@@ -1,6 +1,7 @@
 import { TrashIcon } from "../../icons/TrashIcon";
 import {
   Card,
+  CardWrapper,
   DeleteButton,
   Email,
   Info,
@@ -21,19 +22,21 @@ export const ApplicationItem = ({
   onDelete,
 }: ApplicationItemProps) => {
   return (
-    <Card>
-      <Info>
-        <Email>{email}</Email>
-        <Meta>
-          {employmentType} - <data value={income}>{income} €</data>
-        </Meta>
-      </Info>
-      <DeleteButton
-        aria-label={`Delete application for ${email}`}
-        onClick={onDelete}
-      >
-        <TrashIcon width={24} height={24} />
-      </DeleteButton>
-    </Card>
+    <CardWrapper>
+      <Card>
+        <Info>
+          <Email>{email}</Email>
+          <Meta>
+            {employmentType} - <data value={income}>{income} €</data>
+          </Meta>
+        </Info>
+        <DeleteButton
+          aria-label={`Delete application for ${email}`}
+          onClick={onDelete}
+        >
+          <TrashIcon width={24} height={24} />
+        </DeleteButton>
+      </Card>
+    </CardWrapper>
   );
 };
