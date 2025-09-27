@@ -31,6 +31,7 @@ export const ApplicationItem = ({
           </Meta>
         </Info>
         <DeleteButton
+          type="button"
           aria-label={`Delete application for ${email}`}
           onClick={onDelete}
         >
