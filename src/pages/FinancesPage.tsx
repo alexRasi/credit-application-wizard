@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
-  const { personalForm, financesForm, setFinancesForm } = useApplicationStore();
+  const { personalForm } = useApplicationStore();
 
   // Guard. Users can't navigate to finances directly
   useEffect(() => {
@@ -20,7 +20,11 @@ export const FinancesPage = () => {
 
   const methods = useForm({
     mode: "onChange",
-    defaultValues: financesForm,
+    defaultValues: {
+      employmentType: "",
+      income: "",
+      termsAccepted: false,
+    },
   });
   const { register, handleSubmit } = methods;
 
@@ -30,9 +34,19 @@ export const FinancesPage = () => {
         <WizardLayout
           title="Finances"
           ctaLabel="Submit"
-          onCtaClick={handleSubmit((data) => {
+          onCtaClick={handleSubmit(async (data) => {
             console.log("Form Data:", data);
-            setFinancesForm(data);
+            const payload = { ...personalForm, ...data };
+
+            await fetch(
+              "https://682de3f5746f8ca4a47b0980.mockapi.io/applications",
+              {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+              },
+            );
+
             navigate("/success");
           })}
           footerAddon={
