@@ -27,6 +27,8 @@ export const ApplicationsPage = () => {
     fetchApplications();
   }, []); // run once on mount
 
+  // TODO add loader
+
   return (
     <>
       <WizardLayout
@@ -42,7 +44,7 @@ export const ApplicationsPage = () => {
             <ApplicationItem
               key={app.id}
               email={app.email}
-              employmentType={app.employmentType}
+              employmentType={app.employmentType} // TODO fix type display
               income={app.income}
               onDelete={async () => {
                 await fetch(
@@ -56,85 +58,6 @@ export const ApplicationsPage = () => {
             />
           ))
         )}
-
-        {/* <ApplicationItem
-          email="john.doe@mail.com"
-          employmentType="Full time"
-          income={1000}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jane.smith@mail.com"
-          employmentType="Part time"
-          income={500}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="jack.brown@mail.com"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        />
-        <ApplicationItem
-          email="LAST ITEM"
-          employmentType="Freelance"
-          income={750}
-          onDelete={() => console.log("Delete clicked")}
-        /> */}
       </WizardLayout>
     </>
   );
