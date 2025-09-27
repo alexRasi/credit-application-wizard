@@ -9,6 +9,7 @@ export const ApplicationsPage = () => {
       <WizardLayout
         title="Applications"
         ctaLabel="Apply again"
+        ctaType="button"
         onCtaClick={() => navigate("/personal-info")}
       >
         <ApplicationItem

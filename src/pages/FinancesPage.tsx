@@ -34,7 +34,8 @@ export const FinancesPage = () => {
         <WizardLayout
           title="Finances"
           ctaLabel="Submit"
-          onCtaClick={handleSubmit(async (data) => {
+          ctaType="submit"
+          onCtaSubmit={handleSubmit(async (data) => {
             console.log("Form Data:", data);
             const payload = { ...personalForm, ...data };
 

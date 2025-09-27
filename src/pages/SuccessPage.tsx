@@ -32,6 +32,7 @@ export const SuccessPage = () => {
     <WizardLayout
       title=""
       ctaLabel="View Applications"
+      ctaType="button"
       onCtaClick={() => navigate("/applications")}
     >
       <Message>
