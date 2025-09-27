@@ -4,17 +4,23 @@ import { Checkbox } from "../components/Checkbox/Checkbox";
 import { Input } from "../components/Input/Input";
 import { useNavigate } from "react-router-dom";
 import { FormProvider, useForm } from "react-hook-form";
+import { useApplicationStore } from "../stores/application";
+import { useEffect } from "react";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
+  const { personalForm, financesForm, setFinancesForm } = useApplicationStore();
+
+  // Guard. Users can't navigate to finances directly
+  useEffect(() => {
+    if (!personalForm.fullName || !personalForm.dob || !personalForm.fullName) {
+      navigate("/personal-info", { replace: true });
+    }
+  }, [personalForm, navigate]);
 
   const methods = useForm({
     mode: "onChange",
-    defaultValues: {
-      income: "",
-      employmentType: "",
-      termsAccepted: false,
-    },
+    defaultValues: financesForm,
   });
   const { register, handleSubmit } = methods;
 
@@ -26,6 +32,7 @@ export const FinancesPage = () => {
           ctaLabel="Submit"
           onCtaClick={handleSubmit((data) => {
             console.log("Form Data:", data);
+            setFinancesForm(data);
             navigate("/success");
           })}
           footerAddon={

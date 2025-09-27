@@ -2,19 +2,24 @@ import { useNavigate } from "react-router-dom";
 import { Input } from "../components/Input/Input";
 import { WizardLayout } from "./WizardLayout/WizardLayout";
 import { useForm, FormProvider } from "react-hook-form";
+import { useApplicationStore } from "../stores/application";
+import { useEffect } from "react";
 
 export const PersonalInfoPage = () => {
   const navigate = useNavigate();
+  const { personalForm, setPersonalForm } = useApplicationStore();
 
   const methods = useForm({
     mode: "onChange",
-    defaultValues: {
-      fullName: "",
-      email: "",
-      dob: "",
-    },
+    defaultValues: personalForm,
   });
-  const { register, handleSubmit } = methods;
+  const { register, handleSubmit, getValues } = methods;
+
+  useEffect(() => {
+    return () => {
+      setPersonalForm(getValues());
+    };
+  }, [setPersonalForm, getValues]);
 
   return (
     <>
@@ -24,6 +29,7 @@ export const PersonalInfoPage = () => {
           ctaLabel="Continue"
           onCtaClick={handleSubmit((data) => {
             console.log("Form Data:", data);
+            setPersonalForm(data);
             navigate("/finances");
           })}
         >
