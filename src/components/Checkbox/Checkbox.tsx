@@ -7,13 +7,15 @@ import {
 
 type CheckboxProps = {
   label?: string;
+  id?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Checkbox = ({ label, checked, onChange }: CheckboxProps) => {
+export const Checkbox = ({ label, id, ...props }: CheckboxProps) => {
   return (
     <CheckboxWrapper>
-      <StyledCheckbox checked={checked} onChange={onChange} />
-      <CheckboxLabel>{label}</CheckboxLabel>
+      <StyledCheckbox id={id} {...props} />
+      <CheckboxLabel htmlFor={id}>{label}</CheckboxLabel>
     </CheckboxWrapper>
   );
 };
+// TODO FIX align Styled naming

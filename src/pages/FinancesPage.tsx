@@ -39,7 +39,11 @@ export const FinancesPage = () => {
             label="Income"
             placeholder="Your monthly net income"
             type="text"
-            {...register("income", { required: true, pattern: /^\d+$/ })}
+            {...register("income", {
+              required: true,
+              min: 0,
+              valueAsNumber: true,
+            })}
           />
           <Radio
             value="full"

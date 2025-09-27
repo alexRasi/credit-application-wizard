@@ -38,7 +38,7 @@ export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
   -moz-appearance: none; /* Firefox */
 `;
 
-export const CheckboxLabel = styled.span`
+export const CheckboxLabel = styled.label`
   font-weight: 500;
   font-size: 16px;
 `;
