@@ -6,9 +6,11 @@ import {
   Content,
   Footer,
   Form,
+  Back,
 } from "./WizardLayout.styles";
 import { Button } from "../../components/Button/Button";
 import { useFormContext } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 type WizardLayoutProps = {
   title?: string;
@@ -34,11 +36,12 @@ export const WizardLayout = ({
   const formContext = useFormContext();
   const isValid = formContext?.formState?.isValid ?? false;
   const isSubmitting = formContext?.formState?.isSubmitting ?? false;
+  const navigate = useNavigate();
 
   return (
     <WizardContent>
       <Header>
-        {back ?? <span />}
+        <Back onClick={() => navigate(-1)}>{back ?? <span />}</Back>
         {title && <Heading1>{title}</Heading1>}
         <span />
       </Header>

@@ -6,6 +6,12 @@ export const Header = styled.header`
   justify-content: space-between;
 `;
 
+export const Back = styled.button`
+  all: unset;
+  margin-right: 8px;
+  line-height: 8px;
+`;
+
 export const Heading1 = styled.h1`
   font-weight: 700;
   font-size: 32px;

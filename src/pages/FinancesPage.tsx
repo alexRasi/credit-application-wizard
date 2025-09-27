@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { FormProvider, useForm } from "react-hook-form";
 import { useApplicationStore } from "../stores/application";
 import { useEffect } from "react";
+import { LeftArrowIcon } from "../icons/LeftArrowIcon";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
@@ -60,6 +61,7 @@ export const FinancesPage = () => {
               {...register("termsAccepted", { required: true })}
             />
           }
+          back={<LeftArrowIcon width={32} height={32} />}
         >
           <Input
             label="Income"
