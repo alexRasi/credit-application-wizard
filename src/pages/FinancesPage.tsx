@@ -10,7 +10,8 @@ export const FinancesPage = () => {
     <>
       <WizardLayout
         title="Finances"
-        onSubmit={() => navigate("/success")}
+        ctaLabel="Submit"
+        onCtaClick={() => navigate("/success")}
         footerAddon={
           <Checkbox
             label="I accept the terms and conditions"

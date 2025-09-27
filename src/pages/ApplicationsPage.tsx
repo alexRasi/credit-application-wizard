@@ -8,7 +8,8 @@ export const ApplicationsPage = () => {
     <>
       <WizardLayout
         title="Applications"
-        onSubmit={() => navigate("/personal-info")}
+        ctaLabel="Apply again"
+        onCtaClick={() => navigate("/personal-info")}
       >
         <ApplicationItem
           email="john.doe@mail.com"

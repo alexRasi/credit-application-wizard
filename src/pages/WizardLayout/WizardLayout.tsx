@@ -15,13 +15,15 @@ type WizardLayoutProps = {
   back?: ReactNode;
   footerAddon?: React.ReactNode;
   children: ReactNode;
-  onSubmit?: FormEventHandler<HTMLFormElement>;
+  ctaLabel?: string;
+  onCtaClick?: FormEventHandler<HTMLFormElement>;
 };
 
 export const WizardLayout = ({
   title,
   back,
-  onSubmit,
+  ctaLabel,
+  onCtaClick,
   footerAddon,
   children,
 }: WizardLayoutProps) => {
@@ -36,12 +38,12 @@ export const WizardLayout = ({
         {title && <Heading1>{title}</Heading1>}
         <span />
       </Header>
-      <Form onSubmit={onSubmit} noValidate>
+      <Form onSubmit={onCtaClick} noValidate>
         <Content>{children}</Content>
         <Footer>
           {footerAddon}
           <Button
-            label="Continue"
+            label={ctaLabel ?? "Next"}
             type="submit"
             disabled={formContext ? !isValid || isSubmitting : false}
           />

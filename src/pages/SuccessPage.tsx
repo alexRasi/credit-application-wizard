@@ -29,7 +29,11 @@ export const SuccessPage = () => {
   const navigate = useNavigate();
 
   return (
-    <WizardLayout title="" onSubmit={() => navigate("/applications")}>
+    <WizardLayout
+      title=""
+      ctaLabel="View Applications"
+      onCtaClick={() => navigate("/applications")}
+    >
       <Message>
         <Title>Congratulations !!!</Title>
         <Subtitle>Your application has been accepted!</Subtitle>

@@ -21,7 +21,8 @@ export const PersonalInfoPage = () => {
       <FormProvider {...methods}>
         <WizardLayout
           title="Personal Info"
-          onSubmit={handleSubmit((data) => {
+          ctaLabel="Continue"
+          onCtaClick={handleSubmit((data) => {
             console.log("Form Data:", data);
             navigate("/finances");
           })}
