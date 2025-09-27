@@ -3,49 +3,61 @@ import { Radio } from "../components/Radio/Radio";
 import { Checkbox } from "../components/Checkbox/Checkbox";
 import { Input } from "../components/Input/Input";
 import { useNavigate } from "react-router-dom";
+import { FormProvider, useForm } from "react-hook-form";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
+
+  const methods = useForm({
+    mode: "onChange",
+    defaultValues: {
+      income: "",
+      employmentType: "",
+      termsAccepted: false,
+    },
+  });
+  const { register, handleSubmit } = methods;
+
   return (
     <>
-      <WizardLayout
-        title="Finances"
-        ctaLabel="Submit"
-        onCtaClick={() => navigate("/success")}
-        footerAddon={
-          <Checkbox
-            label="I accept the terms and conditions"
-            onChange={(checked) => console.log("termsAccepted:", checked)}
+      <FormProvider {...methods}>
+        <WizardLayout
+          title="Finances"
+          ctaLabel="Submit"
+          onCtaClick={handleSubmit((data) => {
+            console.log("Form Data:", data);
+            navigate("/success");
+          })}
+          footerAddon={
+            <Checkbox
+              label="I accept the terms and conditions"
+              {...register("termsAccepted", { required: true })}
+            />
+          }
+        >
+          <Input
+            label="Income"
+            placeholder="Your monthly net income"
+            type="text"
+            {...register("income", { required: true, pattern: /^\d+$/ })}
           />
-        }
-      >
-        <Input
-          label="Income"
-          placeholder="Your monthly net income"
-          type="text"
-          onChange={(value) => {
-            console.log("Input changed:", value);
-          }}
-        />
-        <Radio
-          name="employmentType"
-          value="full"
-          label="Full time"
-          onChange={(value) => console.log("employmentType:", value)}
-        />
-        <Radio
-          name="employmentType"
-          value="part"
-          label="Part time"
-          onChange={(value) => console.log("employmentType:", value)}
-        />
-        <Radio
-          name="employmentType"
-          value="unemployed"
-          label="Unemployed"
-          onChange={(value) => console.log("employmentType:", value)}
-        />
-      </WizardLayout>
+          <Radio
+            value="full"
+            label="Full time"
+            {...register("employmentType", { required: true })}
+          />
+          <Radio
+            value="part"
+            label="Part time"
+            {...register("employmentType", { required: true })}
+          />
+          <Radio
+            value="unemployed"
+            label="Unemployed"
+            {...register("employmentType", { required: true })}
+          />
+        </WizardLayout>
+      </FormProvider>
     </>
   );
 };

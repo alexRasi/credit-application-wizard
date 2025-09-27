@@ -3,13 +3,14 @@ import { RadioWrapper, StyledRadio, RadioLabel } from "./Radio.styles";
 
 type RadioProps = {
   label?: string;
+  id?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Radio = ({ label, checked, onChange }: RadioProps) => {
+export const Radio = ({ label, id, ...props }: RadioProps) => {
   return (
     <RadioWrapper>
-      <StyledRadio checked={checked} onChange={onChange} />
-      <RadioLabel>{label}</RadioLabel>
+      <StyledRadio id={id} type="radio" {...props} />
+      <RadioLabel htmlFor={id}>{label}</RadioLabel>
     </RadioWrapper>
   );
 };

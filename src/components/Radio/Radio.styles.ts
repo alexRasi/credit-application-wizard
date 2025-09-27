@@ -44,7 +44,7 @@ export const StyledRadio = styled.input.attrs({ type: "radio" })`
     box-shadow: 0 0 0 2px rgba(0, 147, 39, 0.4);
   }
 `;
-export const RadioLabel = styled.span`
+export const RadioLabel = styled.label`
   font-weight: 500;
   font-size: 16px;
 `;
