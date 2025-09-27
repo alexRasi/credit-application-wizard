@@ -4,7 +4,7 @@ import type { PersonalForm } from "../types/application";
 type Store = {
   personalForm: PersonalForm;
   setPersonalForm: (p: PersonalForm) => void;
-  resetAll: () => void;
+  resetStore: () => void;
 };
 
 const emptyPersonalForm: PersonalForm = {
@@ -16,5 +16,5 @@ const emptyPersonalForm: PersonalForm = {
 export const useApplicationStore = create<Store>((set) => ({
   personalForm: emptyPersonalForm,
   setPersonalForm: (data) => set({ personalForm: data }),
-  resetAll: () => set({ personalForm: emptyPersonalForm }),
+  resetStore: () => set({ personalForm: emptyPersonalForm }),
 }));

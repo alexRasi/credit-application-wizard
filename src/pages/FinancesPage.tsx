@@ -46,9 +46,13 @@ export const FinancesPage = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
               },
-            );
-
-            navigate("/success");
+            ).then((res) => {
+              if (res.ok) {
+                navigate("/success");
+              } else {
+                console.error("Failed to submit application:", res.statusText);
+              }
+            });
           })}
           footerAddon={
             <Checkbox
