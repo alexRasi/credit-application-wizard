@@ -24,6 +24,7 @@
   --radius-full: 50%;
 
   /* ===== TYPOGRAPHY ===== */
+  --color-text-primary: var(--color-neutral-900);
 
   /* Font Sizes */
   --font-size-xs: 12px;

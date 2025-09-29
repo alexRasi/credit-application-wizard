@@ -10,10 +10,15 @@ export const PersonalInfoPage = () => {
   const { personalForm, setPersonalForm } = useApplicationStore();
 
   const methods = useForm({
-    mode: "onChange",
+    mode: "all",
     defaultValues: personalForm,
   });
-  const { register, handleSubmit, getValues } = methods;
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors, touchedFields },
+  } = methods;
 
   useEffect(() => {
     return () => {
@@ -37,29 +42,48 @@ export const PersonalInfoPage = () => {
           {/* Assumption: Based on requirements, a name can include characters.
             Since numbers are considered characters in this context, they are allowed. */}
           <Input
+            id="fullName"
             label="Full Name"
             placeholder="Jane Smith"
             type="text"
-            {...register("fullName", { required: true, maxLength: 50 })}
+            {...register("fullName", {
+              required: "Full name is required",
+              maxLength: {
+                value: 50,
+                message: "Full name cannot exceed 50 characters",
+              },
+            })}
+            error={errors.fullName?.message}
           />
           <Input
+            id="email"
             label="Email"
             placeholder="jane.smith@mail.com"
             type="email"
             {...register("email", {
-              required: true,
-              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
+              required: "Email is required",
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
+                message: "Invalid email format",
+              },
             })}
+            error={errors.email?.message}
           />
           <Input
+            id="dob"
             label="Date of Birth"
             placeholder="30-10-2000"
             type="text"
             {...register("dob", {
               // TODO ISO 8601 format before submission
-              required: true,
-              pattern: /^\d{2}-\d{2}-\d{4}$/,
+              required: "Date of birth is required",
+              pattern: {
+                value: /^\d{2}-\d{2}-\d{4}$/,
+                message: "Must be in DD-MM-YYYY format",
+              },
             })}
+            /* Tradeoff: Show error only if field is touched and unblurred */
+            error={touchedFields.dob ? errors.dob?.message : undefined}
           />
         </WizardLayout>
       </FormProvider>
