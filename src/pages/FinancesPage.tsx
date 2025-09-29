@@ -65,11 +65,10 @@ export const FinancesPage = () => {
           <Input
             label="Income"
             placeholder="Your monthly net income"
-            type="text"
+            type="number"
             {...register("income", {
               required: true,
               min: 0,
-              valueAsNumber: true,
             })}
           />
           <Radio
