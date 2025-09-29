@@ -15,16 +15,16 @@ export const Message = styled.div`
 
 export const Title = styled.h2`
   margin: 0;
-  font-size: 32px;
-  font-weight: 700;
-  color: #171717;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
 `;
 
 export const Subtitle = styled.p`
   margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: #171717;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
 `;
 
 export const SuccessPage = () => {

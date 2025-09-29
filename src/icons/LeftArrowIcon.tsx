@@ -7,17 +7,17 @@ export const LeftArrowIcon = (props: React.SVGProps<SVGSVGElement>) => (
   >
     <path
       d="M16 25.8334L6.66669 16.5L16 7.16669"
-      stroke="#171717"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      stroke="var(--color-text-primary)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M25.3334 16.5H6.66669"
-      stroke="#171717"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      stroke="var(--color-text-primary)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

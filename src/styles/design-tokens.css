@@ -1,0 +1,41 @@
+:root {
+  /* ===== COLORS ===== */
+
+  /* Primary Colors */
+  --color-primary: #009327;
+  --color-primary-focus-ring: rgba(0, 147, 39, 0.4);
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-text-primary: #171717;
+  --color-text-secondary: #78716c;
+
+  /* Semantic Colors */
+  --color-error: #dc2626;
+
+  /* Shadow Colors */
+  --color-shadow: #00000026;
+
+  /* ===== BORDER RADIUS ===== */
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 50%;
+
+  /* ===== TYPOGRAPHY ===== */
+
+  /* Font Sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 32px;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+}

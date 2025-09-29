@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
   all: unset;
-  background-color: green;
   padding: 16px 32px;
-  background-color: #009327;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -26,8 +25,8 @@ export const StyledButton = styled.button`
     filter: brightness(0.95);
   }
 
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
   line-height: 100%;
   letter-spacing: 0%;
 

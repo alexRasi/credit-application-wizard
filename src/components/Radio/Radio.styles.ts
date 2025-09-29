@@ -12,7 +12,7 @@ export const StyledRadio = styled.input.attrs({ type: "radio" })`
   width: 14px;
   height: 14px;
   border: 1px solid #171717;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   cursor: pointer;
   position: relative;
   margin: 0;
@@ -24,15 +24,15 @@ export const StyledRadio = styled.input.attrs({ type: "radio" })`
   -webkit-tap-highlight-color: transparent;
 
   &:checked {
-    border-color: #009327;
+    border-color: var(--color-primary);
   }
 
   &:checked::before {
     content: "";
     width: 9px;
     height: 9px;
-    border-radius: 50%;
-    background: #009327;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,10 +41,10 @@ export const StyledRadio = styled.input.attrs({ type: "radio" })`
 
   /* Optional: your own accessible focus style */
   &:focus-visible {
-    box-shadow: 0 0 0 2px rgba(0, 147, 39, 0.4);
+    box-shadow: 0 0 0 2px var(--color-primary-focus-ring);
   }
 `;
 export const RadioLabel = styled.label`
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
 `;

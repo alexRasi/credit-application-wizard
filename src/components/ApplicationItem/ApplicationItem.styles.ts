@@ -5,7 +5,7 @@ export const Card = styled.article`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   background: #fff;
   box-shadow: 0px 2px 4px 2px #00000026;
   box-sizing: border-box;
@@ -26,9 +26,9 @@ export const Info = styled.div`
 
 export const Email = styled.h3`
   margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #171717;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -36,9 +36,9 @@ export const Email = styled.h3`
 
 export const Meta = styled.p`
   margin: 4px 0 0;
-  font-size: 12px;
-  font-weight: 500;
-  color: #78716c;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -50,8 +50,8 @@ export const DeleteButton = styled.button`
   align-items: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background: #dc2626;
+  border-radius: var(--radius-full);
+  background: var(--color-error);
   color: #fff;
   border: none;
   cursor: pointer;

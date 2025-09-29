@@ -13,8 +13,8 @@ export const Back = styled.button`
 `;
 
 export const Heading1 = styled.h1`
-  font-weight: 700;
-  font-size: 32px;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
   line-height: 1;
   margin: 0;
   margin-right: auto;
