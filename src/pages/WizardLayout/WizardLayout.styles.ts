@@ -9,13 +9,15 @@ export const Header = styled.header`
 export const Back = styled.button`
   all: unset;
   margin-right: 8px;
-  line-height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Heading1 = styled.h1`
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
-  line-height: 1;
+  line-height: var(--font-size-xl);
   margin: 0;
   margin-right: auto;
 `;
