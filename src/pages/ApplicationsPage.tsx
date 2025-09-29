@@ -22,7 +22,7 @@ export const ApplicationsPage = () => {
       console.error(error);
     }
   }, [isError, error]);
-
+  // TODO Assumption user can navigate to applications directly
   return (
     <>
       <WizardLayout

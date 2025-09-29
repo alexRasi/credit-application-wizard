@@ -54,6 +54,7 @@ export const PersonalInfoPage = () => {
             placeholder="30-10-2000"
             type="text"
             {...register("dob", {
+              // TODO ISO 8601 format before submission
               required: true,
               pattern: /^\d{2}-\d{2}-\d{4}$/,
             })}

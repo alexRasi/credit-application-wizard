@@ -9,44 +9,11 @@ function App() {
       <AppRouter />
     </AppContainer>
   );
-
-  // return (
-  //   <AppContainer>
-  //     {/* <Heading1>Personal Info</Heading1> */}
-  //     <Input
-  //       label="Full Name"
-  //       placeholder="Jane Smith"
-  //       type="text"
-  //       onChange={(value) => {
-  //         console.log("Input changed:", value);
-  //       }}
-  //     />
-  //     <Input
-  //       label="Email"
-  //       placeholder="jane.smith@mail.com"
-  //       type="email"
-  //       onChange={(value) => {
-  //         console.log("Input changed:", value);
-  //       }}
-  //     />
-  //     <Input
-  //       label="Date of Birth"
-  //       placeholder="30-10-2000"
-  //       type="text"
-  //       onChange={(value) => {
-  //         console.log("Input changed:", value);
-  //       }}
-  //     />
-  //     {/* <ButtonWrapper>
-  //       <Button
-  //         label="Submit"
-  //         onClick={() => {
-  //           console.log("Submit clicked");
-  //         }}
-  //       />
-  //     </ButtonWrapper> */}
-  //   </AppContainer>
-  // );
 }
 
 export default App;
+
+// TODOS
+// clean comments
+// add tests
+// write assumptions in README.md
