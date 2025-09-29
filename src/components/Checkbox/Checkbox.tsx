@@ -1,8 +1,8 @@
 import type { InputHTMLAttributes } from "react";
 import {
-  CheckboxLabel,
   CheckboxWrapper,
   StyledCheckbox,
+  CheckboxText,
 } from "./Checkbox.styles";
 
 type CheckboxProps = {
@@ -14,7 +14,7 @@ export const Checkbox = ({ label, id, ...props }: CheckboxProps) => {
   return (
     <CheckboxWrapper>
       <StyledCheckbox id={id} {...props} />
-      <CheckboxLabel htmlFor={id}>{label}</CheckboxLabel>
+      {label && <CheckboxText>{label}</CheckboxText>}
     </CheckboxWrapper>
   );
 };

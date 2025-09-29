@@ -1,5 +1,5 @@
 import type { InputHTMLAttributes } from "react";
-import { RadioWrapper, StyledRadio, RadioLabel } from "./Radio.styles";
+import { RadioText, RadioWrapper, StyledRadio } from "./Radio.styles";
 
 type RadioProps = {
   label?: string;
@@ -10,7 +10,7 @@ export const Radio = ({ label, id, ...props }: RadioProps) => {
   return (
     <RadioWrapper>
       <StyledRadio id={id} type="radio" {...props} />
-      <RadioLabel htmlFor={id}>{label}</RadioLabel>
+      {label && <RadioText>{label}</RadioText>}
     </RadioWrapper>
   );
 };
