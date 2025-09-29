@@ -41,7 +41,7 @@ export const ApplicationsPage = () => {
             <ApplicationItem
               key={application.id}
               email={application.email}
-              employmentType={application.employmentType} // TODO fix type display
+              employmentType={application.employmentType}
               income={application.income}
               onDelete={() =>
                 deleteApplication.mutate(application.id, {

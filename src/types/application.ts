@@ -1,5 +1,11 @@
 export type EmploymentType = "full-time" | "part-time" | "unemployed";
 
+export const employmentTypeLabels: Record<EmploymentType, string> = {
+  "full-time": "Full time",
+  "part-time": "Part time",
+  unemployed: "Unemployed",
+};
+
 export interface PersonalForm {
   fullName: string;
   email: string;

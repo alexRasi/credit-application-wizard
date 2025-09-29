@@ -34,7 +34,7 @@ export const Email = styled.h3`
   text-overflow: ellipsis;
 `;
 
-export const Meta = styled.p`
+export const Data = styled.p`
   margin: 4px 0 0;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);

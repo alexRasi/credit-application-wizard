@@ -1,16 +1,20 @@
 import { TrashIcon } from "../../icons/TrashIcon";
 import {
+  employmentTypeLabels,
+  type EmploymentType,
+} from "../../types/application";
+import {
   Card,
   CardWrapper,
   DeleteButton,
   Email,
   Info,
-  Meta,
+  Data,
 } from "./ApplicationItem.styles";
 
 type ApplicationItemProps = {
   email: string;
-  employmentType: string;
+  employmentType: EmploymentType | "";
   income: number | "";
   onDelete: () => void;
 };
@@ -26,9 +30,12 @@ export const ApplicationItem = ({
       <Card>
         <Info>
           <Email>{email}</Email>
-          <Meta>
-            {employmentType} - <data value={income}>{income} €</data>
-          </Meta>
+          <Data>
+            {employmentType
+              ? employmentTypeLabels[employmentType]
+              : "No employment type"}{" "}
+            - <data value={income}>{income} €</data>
+          </Data>
         </Info>
         <DeleteButton
           type="button"
