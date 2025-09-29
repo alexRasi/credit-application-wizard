@@ -11,7 +11,7 @@ const meta = {
   argTypes: {},
   args: {
     email: "john.doe@mail.com",
-    employmentType: "Full time",
+    employmentType: "full-time",
     income: 1000,
     onDelete: () => console.log("Delete clicked"),
   },
