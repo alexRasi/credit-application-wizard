@@ -34,7 +34,8 @@ export const ApplicationItem = ({
             {employmentType
               ? employmentTypeLabels[employmentType]
               : "No employment type"}{" "}
-            - <data value={income}>{income} €</data>
+            - <data value={income}>{income} €</data>{" "}
+            {/*TODO: Assumption: income is in euros*/}
           </Data>
         </Info>
         <DeleteButton

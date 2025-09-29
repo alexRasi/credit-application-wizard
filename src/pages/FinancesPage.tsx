@@ -10,6 +10,7 @@ import { LeftArrowIcon } from "../icons/LeftArrowIcon";
 import { useQueryClient } from "@tanstack/react-query";
 import { useCreateApplication } from "../api/applications.queries";
 import type { FinancesForm } from "../types/application";
+import { Spinner } from "../components/Spinner/Spinner";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
@@ -86,6 +87,7 @@ export const FinancesPage = () => {
             label="Unemployed"
             {...register("employmentType", { required: true })}
           />
+          {createApplication.isPending && <Spinner />}
         </WizardLayout>
       </FormProvider>
     </>

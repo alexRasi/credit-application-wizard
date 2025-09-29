@@ -7,6 +7,7 @@ import {
   useApplications,
   useDeleteApplication,
 } from "../api/applications.queries";
+import { Spinner } from "../components/Spinner/Spinner";
 
 export const ApplicationsPage = () => {
   const navigate = useNavigate();
@@ -22,8 +23,6 @@ export const ApplicationsPage = () => {
     }
   }, [isError, error]);
 
-  // TODO add loader
-
   return (
     <>
       <WizardLayout
@@ -32,7 +31,7 @@ export const ApplicationsPage = () => {
         ctaType="button"
         onCtaClick={() => navigate("/personal-info")}
       >
-        {isLoading && <p>Loading...</p>}
+        {(isLoading || deleteApplication.isPending) && <Spinner />}
 
         {!isLoading && !isError && (!data || data.length === 0) ? (
           <p>No applications found.</p>
