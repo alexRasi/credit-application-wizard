@@ -41,7 +41,7 @@ export const WizardLayout = ({
   return (
     <WizardContent>
       <Header>
-        <Back onClick={() => navigate(-1)}>{back ?? <span />}</Back>
+        {back && <Back onClick={() => navigate(-1)}>{back}</Back>}
         {title && <Heading1>{title}</Heading1>}
         <span />
       </Header>
