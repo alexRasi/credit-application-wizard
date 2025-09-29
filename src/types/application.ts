@@ -8,7 +8,7 @@ export interface PersonalForm {
 
 export interface FinancesForm {
   employmentType: EmploymentType | "";
-  income: number | null;
+  income: number | "";
   termsAccepted: boolean;
 }
 
@@ -16,8 +16,8 @@ export interface ApplicationPayload {
   fullName: string;
   email: string;
   date: string; // ISO 8601 format, e.g. "1990-07-25T00:00:00Z"
-  employmentType: EmploymentType;
-  income: number;
+  employmentType: EmploymentType | "";
+  income: number | "";
 }
 
 export interface ApplicationRecord extends ApplicationPayload {

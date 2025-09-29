@@ -1,31 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import { ApplicationItem } from "../components/ApplicationItem/ApplicationItem";
 import { WizardLayout } from "./WizardLayout/WizardLayout";
-import { useEffect, useState } from "react";
-import type { ApplicationRecord } from "../types/application";
+import { useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
+import {
+  useApplications,
+  useDeleteApplication,
+} from "../api/applications.queries";
 
 export const ApplicationsPage = () => {
   const navigate = useNavigate();
-  const [applications, setApplications] = useState<ApplicationRecord[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const qc = useQueryClient();
+
+  const { data, isLoading, isError, error } = useApplications();
+  const deleteApplication = useDeleteApplication();
 
   useEffect(() => {
-    const fetchApplications = async () => {
-      try {
-        const res = await fetch(
-          "https://682de3f5746f8ca4a47b0980.mockapi.io/applications",
-        );
-        const data = await res.json();
-        setApplications(data);
-        setLoading(false);
-      } catch (err) {
-        setLoading(false);
-        console.error("Failed to fetch applications:", err);
-      }
-    };
-
-    fetchApplications();
-  }, []); // run once on mount
+    if (isError) {
+      // TODO add toast
+      console.error(error);
+    }
+  }, [isError, error]);
 
   // TODO add loader
 
@@ -37,24 +32,28 @@ export const ApplicationsPage = () => {
         ctaType="button"
         onCtaClick={() => navigate("/personal-info")}
       >
-        {applications.length === 0 && loading === false ? (
+        {isLoading && <p>Loading...</p>}
+
+        {!isLoading && !isError && (!data || data.length === 0) ? (
           <p>No applications found.</p>
         ) : (
-          applications.map((app) => (
+          data?.map((application) => (
             <ApplicationItem
-              key={app.id}
-              email={app.email}
-              employmentType={app.employmentType} // TODO fix type display
-              income={app.income}
-              onDelete={async () => {
-                await fetch(
-                  `https://682de3f5746f8ca4a47b0980.mockapi.io/applications/${app.id}`,
-                  { method: "DELETE" },
-                );
-                setApplications((prev) =>
-                  prev.filter((item) => item.id !== app.id),
-                );
-              }}
+              key={application.id}
+              email={application.email}
+              employmentType={application.employmentType} // TODO fix type display
+              income={application.income}
+              onDelete={() =>
+                deleteApplication.mutate(application.id, {
+                  onSuccess: () => {
+                    qc.invalidateQueries({ queryKey: ["applications"] });
+                  },
+                  onError: (error) => {
+                    // TODO show toast
+                    console.error(error);
+                  },
+                })
+              }
             />
           ))
         )}

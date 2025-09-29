@@ -11,7 +11,7 @@ import {
 type ApplicationItemProps = {
   email: string;
   employmentType: string;
-  income: number;
+  income: number | "";
   onDelete: () => void;
 };
 

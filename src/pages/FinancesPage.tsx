@@ -7,10 +7,15 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useApplicationStore } from "../stores/application";
 import { useEffect } from "react";
 import { LeftArrowIcon } from "../icons/LeftArrowIcon";
+import { useQueryClient } from "@tanstack/react-query";
+import { useCreateApplication } from "../api/applications.queries";
+import type { FinancesForm } from "../types/application";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
   const { personalForm } = useApplicationStore();
+  const qc = useQueryClient();
+  const createApplication = useCreateApplication();
 
   // Guard. Users can't navigate to finances directly
   useEffect(() => {
@@ -19,7 +24,7 @@ export const FinancesPage = () => {
     }
   }, [personalForm, navigate]);
 
-  const methods = useForm({
+  const methods = useForm<FinancesForm>({
     mode: "onChange",
     defaultValues: {
       employmentType: "",
@@ -36,24 +41,17 @@ export const FinancesPage = () => {
           title="Finances"
           ctaLabel="Submit"
           ctaType="submit"
-          onCtaSubmit={handleSubmit(async (data) => {
-            console.log("Form Data:", data);
-            const payload = { ...personalForm, ...data };
-
-            await fetch(
-              "https://682de3f5746f8ca4a47b0980.mockapi.io/applications",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
-              },
-            ).then((res) => {
-              if (res.ok) {
-                navigate("/success");
-              } else {
-                console.error("Failed to submit application:", res.statusText);
-              }
-            });
+          onCtaSubmit={handleSubmit(async (formData) => {
+            try {
+              await createApplication.mutateAsync({
+                ...personalForm,
+                ...formData,
+              });
+              await qc.invalidateQueries({ queryKey: ["applications"] });
+              navigate("/success");
+            } catch (error) {
+              console.error(error);
+            }
           })}
           footerAddon={
             <Checkbox
