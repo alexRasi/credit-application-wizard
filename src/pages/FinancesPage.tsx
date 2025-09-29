@@ -26,14 +26,18 @@ export const FinancesPage = () => {
   }, [personalForm, navigate]);
 
   const methods = useForm<FinancesForm>({
-    mode: "onChange",
+    mode: "all",
     defaultValues: {
       employmentType: "",
       income: "",
       termsAccepted: false,
     },
   });
-  const { register, handleSubmit } = methods;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = methods;
 
   return (
     <>
@@ -67,9 +71,13 @@ export const FinancesPage = () => {
             placeholder="Your monthly net income"
             type="number"
             {...register("income", {
-              required: true,
-              min: 0,
+              required: "income is required",
+              min: {
+                value: 0,
+                message: "income must not be negative",
+              },
             })}
+            error={errors.income?.message}
           />
           <Radio
             value="full"
