@@ -71,7 +71,7 @@ export const FinancesPage = () => {
             placeholder="Your monthly net income"
             type="number"
             {...register("income", {
-              required: "income is required",
+              required: "Income is required",
               min: {
                 value: 0,
                 message: "income must not be negative",
