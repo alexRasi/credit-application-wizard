@@ -17,3 +17,5 @@ export default App;
 // clean comments
 // add tests
 // write assumptions in README.md
+// Typography component?
+// browser onclick shows focus outline

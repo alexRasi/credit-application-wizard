@@ -34,6 +34,8 @@ export const PersonalInfoPage = () => {
             navigate("/finances");
           })}
         >
+          {/* Assumption: Based on requirements, a name can include characters.
+            Since numbers are considered characters in this context, they are allowed. */}
           <Input
             label="Full Name"
             placeholder="Jane Smith"

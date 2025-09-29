@@ -3,12 +3,12 @@
 
   /* Primary Colors */
   --color-primary: #009327;
-  --color-primary-focus-ring: rgba(0, 147, 39, 0.4);
+  --color-primary-focus: rgba(0, 147, 39, 0.4);
 
   /* Neutral Colors */
   --color-white: #ffffff;
-  --color-text-primary: #171717;
-  --color-text-secondary: #78716c;
+  --color-neutral-900: #171717;
+  --color-neutral-500: #78716c;
 
   /* Semantic Colors */
   --color-error: #dc2626;
@@ -38,4 +38,12 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /* Input colors */
+  --color-input-border: var(--color-neutral-500);
+  /*assumption: border-focus not provided in design tokens, using neutral-900*/
+  --color-input-border-focus: var(--color-neutral-900);
+  --color-input-border-error: var(--color-error);
+  --color-input-text: var(--color-neutral-900);
+  --color-input-placeholder: var(--color-neutral-500);
+  --color-input-background: var(--color-white);
 }
