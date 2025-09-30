@@ -32,13 +32,16 @@ export const RadioGroup = ({
   error,
 }: RadioGroupProps) => {
   const { register } = useFormContext();
-  const errorId = `${name}-error`;
 
   return (
     <FieldWrapper>
       {label && <Label htmlFor={name}>{label}</Label>}
 
-      <OptionsWrapper role="radiogroup" aria-invalid={!!error}>
+      <OptionsWrapper
+        role="radiogroup"
+        aria-invalid={!!error}
+        aria-describedby={error ? error : undefined}
+      >
         {/*todo aria described by */}
         {options.map((option) => (
           <Radio
@@ -52,7 +55,7 @@ export const RadioGroup = ({
       </OptionsWrapper>
 
       {error && (
-        <ErrorText id={errorId} role="alert">
+        <ErrorText id={`${name}-error`} role="alert">
           {error}
         </ErrorText>
       )}

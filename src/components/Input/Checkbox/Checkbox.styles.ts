@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const CheckboxWrapper = styled.label`
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
+  flex-direction: column;
   gap: 8px;
   cursor: pointer;
 `;
@@ -11,7 +12,7 @@ export const CheckboxWrapper = styled.label`
 export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
   width: 14px;
   height: 14px;
-  border: 1px solid #171717;
+  border: 1px solid #171717; // TODO fix forgotten variables
   border-radius: var(--radius-sm);
   cursor: pointer;
   position: relative;
@@ -41,4 +42,11 @@ export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
 export const CheckboxText = styled.span`
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-base);
+`;
+
+export const CheckboxLabelWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
 `;

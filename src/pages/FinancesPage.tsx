@@ -1,5 +1,5 @@
 import { WizardLayout } from "./WizardLayout/WizardLayout";
-import { Checkbox } from "../components/Checkbox/Checkbox";
+import { Checkbox } from "../components/Input/Checkbox/Checkbox";
 import { TextInput } from "../components/Input/TextInput/TextInput";
 import { useNavigate } from "react-router-dom";
 import { FormProvider, useForm } from "react-hook-form";
@@ -64,8 +64,11 @@ export const FinancesPage = () => {
           }}
           footerAddon={
             <Checkbox
+              error={errors.termsAccepted?.message}
               label="I accept the terms and conditions"
-              {...register("termsAccepted", { required: true })}
+              {...register("termsAccepted", {
+                required: "Terms must be accepted to continue",
+              })}
             />
           }
           back={<LeftArrowIcon width={32} height={32} />}
@@ -87,9 +90,13 @@ export const FinancesPage = () => {
             label="Employment type"
             name="employmentType"
             options={[
-              { label: "Full time", value: "full" },
-              { label: "Part time", value: "part" },
-              { label: "Unemployed", value: "unemployed" },
+              { label: "Full time", value: "full", id: "employment-full" },
+              { label: "Part time", value: "part", id: "employment-part" },
+              {
+                label: "Unemployed",
+                value: "unemployed",
+                id: "employment-unemployed",
+              },
             ]}
             rules={{ required: "Please select employment type" }}
             error={errors.employmentType?.message}
