@@ -13,7 +13,7 @@ export const ApplicationsPage = () => {
   const navigate = useNavigate();
   const qc = useQueryClient();
 
-  const { data, isLoading, isError, error } = useApplications();
+  const { data, isPending, isError, error } = useApplications();
   const deleteApplication = useDeleteApplication();
 
   useEffect(() => {
@@ -31,9 +31,9 @@ export const ApplicationsPage = () => {
         ctaType="button"
         onCtaClick={() => navigate("/personal-info")}
       >
-        {(isLoading || deleteApplication.isPending) && <Spinner />}
+        {(isPending || deleteApplication.isPending) && <Spinner />}
 
-        {!isLoading && !isError && (!data || data.length === 0) ? (
+        {!isPending && !isError && (!data || data.length === 0) ? (
           <p>No applications found.</p>
         ) : (
           data?.map((application) => (
