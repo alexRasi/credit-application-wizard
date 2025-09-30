@@ -11,6 +11,7 @@ import { useCreateApplication } from "../api/applications.queries";
 import type { FinancesForm } from "../types/application";
 import { Spinner } from "../components/Spinner/Spinner";
 import { RadioGroup } from "../components/Input/RadioGroup/RadioGroup";
+import { normalizeDate } from "../api/adapters";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ export const FinancesPage = () => {
               await createApplication.mutateAsync({
                 ...personalForm,
                 ...formData,
+                date: normalizeDate(personalForm.date),
               });
               await qc.invalidateQueries({ queryKey: ["applications"] });
               navigate("/success");

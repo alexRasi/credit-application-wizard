@@ -8,10 +8,12 @@ export const normalizeDate = (ddmmyyyy: string): string => {
   if (!ddmmyyyy) return "";
 
   const [dd, mm, yyyy] = ddmmyyyy.split("-");
+  if (!dd || !mm || !yyyy) return "";
+
   const year = Number(yyyy);
-  const month = Number(mm) - 1; // js months are 0-based
+  const month = Number(mm) - 1;
   const day = Number(dd);
 
   const d = new Date(Date.UTC(year, month, day));
-  return d.toISOString();
+  return isNaN(d.getTime()) ? "" : d.toISOString();
 };
