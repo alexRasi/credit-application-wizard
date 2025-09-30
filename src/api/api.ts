@@ -1,5 +1,4 @@
 import type { ApplicationRecord } from "../types/application";
-import { normalizeEmploymentType } from "./adapters";
 
 const BASE = "https://682de3f5746f8ca4a47b0980.mockapi.io";
 
@@ -13,8 +12,6 @@ export const fetchApplications = async (): Promise<ApplicationRecord[]> => {
     (response: ApplicationRecord): ApplicationRecord => ({
       ...response,
       id: Number(response.id), // api returns id as string but contract says number
-      // backend returns full and part instead of full-time and part-time
-      employmentType: normalizeEmploymentType(response.employmentType),
     }),
   );
 };

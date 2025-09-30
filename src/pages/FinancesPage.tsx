@@ -20,7 +20,7 @@ export const FinancesPage = () => {
 
   // Guard. Users can't navigate to finances directly
   useEffect(() => {
-    if (!personalForm.fullName || !personalForm.dob || !personalForm.fullName) {
+    if (!personalForm.fullName || !personalForm.date || !personalForm.email) {
       navigate("/personal-info", { replace: true });
     }
   }, [personalForm, navigate]);
@@ -29,7 +29,7 @@ export const FinancesPage = () => {
     mode: "all",
     defaultValues: {
       employmentType: "",
-      income: "",
+      income: null,
       termsAccepted: false,
     },
   });
@@ -83,6 +83,7 @@ export const FinancesPage = () => {
                 value: 0,
                 message: "income must not be negative",
               },
+              valueAsNumber: true,
             })}
             error={errors.income?.message}
           />
@@ -90,8 +91,8 @@ export const FinancesPage = () => {
             label="Employment type"
             name="employmentType"
             options={[
-              { label: "Full time", value: "full", id: "employment-full" },
-              { label: "Part time", value: "part", id: "employment-part" },
+              { label: "Full time", value: "full-time", id: "employment-full" },
+              { label: "Part time", value: "part-time", id: "employment-part" },
               {
                 label: "Unemployed",
                 value: "unemployed",

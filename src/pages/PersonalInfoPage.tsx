@@ -74,11 +74,11 @@ export const PersonalInfoPage = () => {
             error={errors.email?.message}
           />
           <TextInput
-            id="dob"
+            id="date"
             label="Date of Birth"
             placeholder="30-10-2000"
             type="text"
-            {...register("dob", {
+            {...register("date", {
               // TODO ISO 8601 format before submission
               required: "Date of birth is required",
               pattern: {
@@ -88,8 +88,8 @@ export const PersonalInfoPage = () => {
             })}
             /* Tradeoff: Show error only if field is touched and unblurred */
             error={
-              touchedFields.dob || errors.dob?.message?.includes("required") // TODO fix includes
-                ? errors.dob?.message
+              touchedFields.date || errors.date?.message?.includes("required") // TODO fix includes
+                ? errors.date?.message
                 : undefined
             }
           />

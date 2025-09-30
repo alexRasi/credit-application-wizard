@@ -10,7 +10,7 @@ type Store = {
 const emptyPersonalForm: PersonalForm = {
   fullName: "",
   email: "",
-  dob: "",
+  date: "",
 };
 
 export const useApplicationStore = create<Store>((set) => ({

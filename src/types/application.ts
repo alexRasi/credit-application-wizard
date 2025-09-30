@@ -9,12 +9,12 @@ export const employmentTypeLabels: Record<EmploymentType, string> = {
 export interface PersonalForm {
   fullName: string;
   email: string;
-  dob: string; // DD-MM-YYYY
+  date: string; // DD-MM-YYYY
 }
 
 export interface FinancesForm {
   employmentType: EmploymentType | "";
-  income: number | "";
+  income: number | null;
   termsAccepted: boolean;
 }
 
@@ -24,7 +24,7 @@ export interface ApplicationPayload {
   // TODO fix date attribute name mismatch with backend
   date: string; // ISO 8601 format, e.g. "1990-07-25T00:00:00Z"
   employmentType: EmploymentType | "";
-  income: number | "";
+  income: number | null;
 }
 
 export interface ApplicationRecord extends ApplicationPayload {

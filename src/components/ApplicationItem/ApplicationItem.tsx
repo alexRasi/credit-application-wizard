@@ -15,7 +15,7 @@ import {
 type ApplicationItemProps = {
   email: string;
   employmentType: EmploymentType | "";
-  income: number | "";
+  income: number | null;
   onDelete: () => void;
 };
 
@@ -34,8 +34,7 @@ export const ApplicationItem = ({
             {employmentType
               ? employmentTypeLabels[employmentType]
               : "No employment type"}{" "}
-            - <data value={income}>{income} €</data>{" "}
-            {/*TODO: Assumption: income is in euros*/}
+            - {income} €{/*TODO: Assumption: income is in euros*/}
           </Data>
         </Info>
         <DeleteButton
