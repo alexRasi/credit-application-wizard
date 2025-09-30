@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Input } from "../components/Input/Input";
+import { TextInput } from "../components/Input/TextInput/TextInput";
 import { WizardLayout } from "./WizardLayout/WizardLayout";
 import { useForm, FormProvider } from "react-hook-form";
 import { useApplicationStore } from "../stores/application";
@@ -41,7 +41,7 @@ export const PersonalInfoPage = () => {
         >
           {/* Assumption: Based on requirements, a name can include characters.
             Since numbers are considered characters in this context, they are allowed. */}
-          <Input
+          <TextInput
             id="fullName"
             label="Full Name"
             placeholder="Jane Smith"
@@ -55,7 +55,7 @@ export const PersonalInfoPage = () => {
             })}
             error={errors.fullName?.message}
           />
-          <Input
+          <TextInput
             id="email"
             label="Email"
             placeholder="jane.smith@mail.com"
@@ -69,7 +69,7 @@ export const PersonalInfoPage = () => {
             })}
             error={errors.email?.message}
           />
-          <Input
+          <TextInput
             id="dob"
             label="Date of Birth"
             placeholder="30-10-2000"

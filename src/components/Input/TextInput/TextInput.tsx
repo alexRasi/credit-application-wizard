@@ -1,13 +1,16 @@
-import { FieldWrapper, Label, StyledInput, ErrorText } from "./Input.styles";
+import {
+  FieldWrapper,
+  Label,
+  StyledInput,
+  ErrorText,
+} from "./TextInput.styles";
 
-type InputProps = {
+type TextInputProps = {
   label?: string;
   error?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-//TODO add placeholder and error styles error border red
-
-export const Input = ({ label, error, id, ...props }: InputProps) => {
+export const TextInput = ({ label, error, id, ...props }: TextInputProps) => {
   return (
     <FieldWrapper>
       {label && <Label htmlFor={id}>{label}</Label>}

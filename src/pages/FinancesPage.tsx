@@ -1,7 +1,7 @@
 import { WizardLayout } from "./WizardLayout/WizardLayout";
 import { Radio } from "../components/Radio/Radio";
 import { Checkbox } from "../components/Checkbox/Checkbox";
-import { Input } from "../components/Input/Input";
+import { TextInput } from "../components/Input/TextInput/TextInput";
 import { useNavigate } from "react-router-dom";
 import { FormProvider, useForm } from "react-hook-form";
 import { useApplicationStore } from "../stores/application";
@@ -70,7 +70,7 @@ export const FinancesPage = () => {
           }
           back={<LeftArrowIcon width={32} height={32} />}
         >
-          <Input
+          <TextInput
             label="Income"
             placeholder="Your monthly net income"
             type="number"
