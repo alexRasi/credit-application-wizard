@@ -22,6 +22,7 @@ type RadioGroupProps = {
   options: Option[];
   rules?: RegisterOptions<FieldValues, string> | undefined;
   error?: string;
+  "data-testid"?: string;
 };
 
 export const RadioGroup = ({
@@ -30,6 +31,7 @@ export const RadioGroup = ({
   options,
   rules,
   error,
+  "data-testid": testId,
 }: RadioGroupProps) => {
   const { register } = useFormContext();
 
@@ -38,6 +40,7 @@ export const RadioGroup = ({
       {label && <Label htmlFor={name}>{label}</Label>}
 
       <OptionsWrapper
+        data-testid={testId}
         role="radiogroup"
         aria-invalid={!!error}
         aria-describedby={error ? error : undefined}

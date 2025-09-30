@@ -29,7 +29,7 @@ const Loader = styled.div`
 `;
 
 export const Spinner = () => (
-  <Overlay>
+  <Overlay data-testid="spinner">
     <Loader />
   </Overlay>
 );

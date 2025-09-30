@@ -66,6 +66,7 @@ export const FinancesPage = () => {
           }}
           footerAddon={
             <Checkbox
+              data-testid="terms-checkbox"
               error={errors.termsAccepted?.message}
               label="I accept the terms and conditions"
               {...register("termsAccepted", {
@@ -76,6 +77,7 @@ export const FinancesPage = () => {
           back={<LeftArrowIcon width={32} height={32} />}
         >
           <TextInput
+            data-testid="income-input"
             label="Income"
             placeholder="Your monthly net income"
             type="number"
@@ -90,6 +92,7 @@ export const FinancesPage = () => {
             error={errors.income?.message}
           />
           <RadioGroup
+            data-testid="employment-type"
             label="Employment type"
             name="employmentType"
             options={[
