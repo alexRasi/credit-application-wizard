@@ -46,7 +46,7 @@ export const Content = styled.div`
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
 
   /* keeps last card from hiding under the footer */
   padding-bottom: 24px; /* CTA height*/

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import { Radio } from "../components/Radio/Radio";
+import { Radio } from "../components/Input/Radio/Radio";
 
 const meta = {
   title: "Atoms/Radio",

@@ -18,6 +18,7 @@ export const PersonalInfoPage = () => {
     handleSubmit,
     getValues,
     formState: { errors, touchedFields },
+    trigger,
   } = methods;
 
   useEffect(() => {
@@ -38,6 +39,9 @@ export const PersonalInfoPage = () => {
             setPersonalForm(data);
             navigate("/finances");
           })}
+          onCtaDisabledClick={async () => {
+            await trigger();
+          }}
         >
           {/* Assumption: Based on requirements, a name can include characters.
             Since numbers are considered characters in this context, they are allowed. */}
@@ -83,7 +87,11 @@ export const PersonalInfoPage = () => {
               },
             })}
             /* Tradeoff: Show error only if field is touched and unblurred */
-            error={touchedFields.dob ? errors.dob?.message : undefined}
+            error={
+              touchedFields.dob || errors.dob?.message?.includes("required") // TODO fix includes
+                ? errors.dob?.message
+                : undefined
+            }
           />
         </WizardLayout>
       </FormProvider>

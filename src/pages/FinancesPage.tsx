@@ -1,5 +1,4 @@
 import { WizardLayout } from "./WizardLayout/WizardLayout";
-import { Radio } from "../components/Radio/Radio";
 import { Checkbox } from "../components/Checkbox/Checkbox";
 import { TextInput } from "../components/Input/TextInput/TextInput";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +10,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useCreateApplication } from "../api/applications.queries";
 import type { FinancesForm } from "../types/application";
 import { Spinner } from "../components/Spinner/Spinner";
+import { RadioGroup } from "../components/Input/RadioGroup/RadioGroup";
 
 export const FinancesPage = () => {
   const navigate = useNavigate();
@@ -83,21 +83,18 @@ export const FinancesPage = () => {
             })}
             error={errors.income?.message}
           />
-          <Radio
-            value="full"
-            label="Full time"
-            {...register("employmentType", { required: true })}
+          <RadioGroup
+            label="Employment type"
+            name="employmentType"
+            options={[
+              { label: "Full time", value: "full" },
+              { label: "Part time", value: "part" },
+              { label: "Unemployed", value: "unemployed" },
+            ]}
+            rules={{ required: "Please select employment type" }}
+            error={errors.employmentType?.message}
           />
-          <Radio
-            value="part"
-            label="Part time"
-            {...register("employmentType", { required: true })}
-          />
-          <Radio
-            value="unemployed"
-            label="Unemployed"
-            {...register("employmentType", { required: true })}
-          />
+
           {createApplication.isPending && <Spinner />}
         </WizardLayout>
       </FormProvider>
