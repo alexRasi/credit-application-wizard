@@ -36,6 +36,7 @@ export const FinancesPage = () => {
   const {
     register,
     handleSubmit,
+    trigger,
     formState: { errors },
   } = methods;
 
@@ -58,6 +59,9 @@ export const FinancesPage = () => {
               console.error(error);
             }
           })}
+          onCtaDisabledClick={async () => {
+            await trigger();
+          }}
           footerAddon={
             <Checkbox
               label="I accept the terms and conditions"

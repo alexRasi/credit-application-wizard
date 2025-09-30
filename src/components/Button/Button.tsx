@@ -1,15 +1,34 @@
-import { StyledButton } from "./Button.styles";
+import { ButtonWrapper, StyledButton } from "./Button.styles";
 
 type ButtonProps = {
   label: string;
   disabled?: boolean;
   onClick?: () => void;
+  onDisabledClick?: () => void; // So we can show required error messages in forms
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ label, onClick, disabled, ...props }: ButtonProps) => {
+export const Button = ({
+  label,
+  onClick,
+  disabled,
+  onDisabledClick,
+  ...props
+}: ButtonProps) => {
   return (
-    <StyledButton onClick={onClick} disabled={disabled} {...props}>
-      {label}
-    </StyledButton>
+    <ButtonWrapper
+      onClick={(e) => {
+        if (disabled) {
+          e.preventDefault();
+          e.stopPropagation();
+          onDisabledClick?.();
+          return;
+        }
+        onClick?.();
+      }}
+    >
+      <StyledButton disabled={disabled} {...props}>
+        {label}
+      </StyledButton>
+    </ButtonWrapper>
   );
 };

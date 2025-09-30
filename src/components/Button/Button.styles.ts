@@ -1,16 +1,21 @@
 import styled from "styled-components";
 
+export const ButtonWrapper = styled.span`
+  width: 100%;
+`;
+
 export const StyledButton = styled.button`
   all: unset;
   padding: 16px 32px;
   background-color: var(--color-primary);
   color: var(--color-white);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 100px;
   cursor: pointer;
-  width: auto;
+  width: 100%;
+  box-sizing: border-box;
 
   transition:
     transform 0.1s ease,
@@ -39,6 +44,7 @@ export const StyledButton = styled.button`
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
+    pointer-events: none;
   }
 
   -webkit-tap-highlight-color: transparent;

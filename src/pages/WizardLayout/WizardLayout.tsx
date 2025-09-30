@@ -21,6 +21,7 @@ type WizardLayoutProps = {
   ctaType?: "button" | "submit";
   onCtaSubmit?: FormEventHandler<HTMLFormElement>;
   onCtaClick?: () => void;
+  onCtaDisabledClick?: () => void;
 };
 
 export const WizardLayout = ({
@@ -30,6 +31,7 @@ export const WizardLayout = ({
   ctaType,
   onCtaClick,
   onCtaSubmit,
+  onCtaDisabledClick,
   footerAddon,
   children,
 }: WizardLayoutProps) => {
@@ -51,6 +53,7 @@ export const WizardLayout = ({
           {footerAddon}
           <Button
             onClick={onCtaClick}
+            onDisabledClick={onCtaDisabledClick}
             label={ctaLabel ?? "Next"}
             type={ctaType ?? "submit"}
             disabled={formContext ? !isValid || isSubmitting : false}
