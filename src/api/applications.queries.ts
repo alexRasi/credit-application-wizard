@@ -3,6 +3,7 @@ import type { ApplicationRecord } from "../types/application";
 import { deleteApplication, fetchApplications, createApplication } from "./api";
 
 export const applicationKeys = {
+  //TODO remove
   all: ["applications"] as const,
 };
 
