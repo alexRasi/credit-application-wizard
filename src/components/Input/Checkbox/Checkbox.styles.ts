@@ -12,7 +12,7 @@ export const CheckboxWrapper = styled.label`
 export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
   width: 14px;
   height: 14px;
-  border: 1px solid #171717; // TODO fix forgotten variables
+  border: 1px solid var(--color-neutral-900);
   border-radius: var(--radius-sm);
   cursor: pointer;
   position: relative;

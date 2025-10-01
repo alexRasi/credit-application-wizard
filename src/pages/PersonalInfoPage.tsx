@@ -35,7 +35,6 @@ export const PersonalInfoPage = () => {
           ctaLabel="Continue"
           ctaType="submit"
           onCtaSubmit={handleSubmit((data) => {
-            console.log("Form Data:", data);
             setPersonalForm(data);
             navigate("/finances");
           })}
@@ -58,6 +57,7 @@ export const PersonalInfoPage = () => {
               },
             })}
             error={errors.fullName?.message}
+            data-testid="fullName-input"
           />
           <TextInput
             id="email"
@@ -72,6 +72,7 @@ export const PersonalInfoPage = () => {
               },
             })}
             error={errors.email?.message}
+            data-testid="email-input"
           />
           <TextInput
             id="date"
@@ -79,7 +80,6 @@ export const PersonalInfoPage = () => {
             placeholder="30-10-2000"
             type="text"
             {...register("date", {
-              // TODO ISO 8601 format before submission
               required: "Date of birth is required",
               pattern: {
                 value: /^\d{2}-\d{2}-\d{4}$/,
@@ -92,6 +92,7 @@ export const PersonalInfoPage = () => {
                 ? errors.date?.message
                 : undefined
             }
+            data-testid="date-input"
           />
         </WizardLayout>
       </FormProvider>

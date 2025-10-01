@@ -9,7 +9,7 @@ type RadioProps = {
 export const Radio = ({ label, id, ...props }: RadioProps) => {
   return (
     <RadioWrapper>
-      <StyledRadio id={id} type="radio" {...props} />
+      <StyledRadio id={id} role="radio" type="radio" {...props} />
       {label && <RadioText>{label}</RadioText>}
     </RadioWrapper>
   );

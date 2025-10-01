@@ -92,16 +92,26 @@ export const FinancesPage = () => {
             error={errors.income?.message}
           />
           <RadioGroup
-            data-testid="employment-type"
             label="Employment type"
             name="employmentType"
             options={[
-              { label: "Full time", value: "full-time", id: "employment-full" },
-              { label: "Part time", value: "part-time", id: "employment-part" },
+              {
+                label: "Full time",
+                value: "full-time",
+                id: "employment-full",
+                testId: "employment-full",
+              },
+              {
+                label: "Part time",
+                value: "part-time",
+                id: "employment-part",
+                testId: "employment-part",
+              },
               {
                 label: "Unemployed",
                 value: "unemployed",
                 id: "employment-unemployed",
+                testId: "employment-unemployed",
               },
             ]}
             rules={{ required: "Please select employment type" }}

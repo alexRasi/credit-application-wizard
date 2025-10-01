@@ -46,11 +46,9 @@ export const SuccessPage = () => {
       onCtaClick={() => navigate("/applications")}
     >
       <Message>
-        <Title>Congratulations !!!</Title>
+        <Title data-testid="success-title">Congratulations !!!</Title>
         <Subtitle>Your application has been accepted!</Subtitle>
       </Message>
     </WizardLayout>
   );
 };
-
-// TODO default impots for every page

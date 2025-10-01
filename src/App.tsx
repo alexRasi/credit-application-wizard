@@ -14,8 +14,5 @@ function App() {
 export default App;
 
 // TODOS
-// clean comments
-// add tests
-// write assumptions in README.md
 // Typography component?
 // browser onclick shows focus outline

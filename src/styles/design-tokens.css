@@ -47,4 +47,6 @@
   --color-input-text: var(--color-neutral-900);
   --color-input-placeholder: var(--color-neutral-500);
   --color-input-background: var(--color-white);
+
+  --z-index-overlay: 9999;
 }

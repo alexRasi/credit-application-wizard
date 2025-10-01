@@ -22,6 +22,7 @@ export const Checkbox = ({ label, id, error, ...props }: CheckboxProps) => {
           aria-invalid={!!error}
           aria-describedby={error ? error : undefined}
           {...props}
+          role="checkbox"
         />
         {label && <CheckboxText>{label}</CheckboxText>}
       </CheckboxLabelWrapper>
@@ -30,4 +31,3 @@ export const Checkbox = ({ label, id, error, ...props }: CheckboxProps) => {
     </CheckboxWrapper>
   );
 };
-// TODO FIX align Styled naming

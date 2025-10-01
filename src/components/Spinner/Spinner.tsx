@@ -11,7 +11,7 @@ const Overlay = styled.div`
   align-items: center;
   justify-content: center;
   background: var(--color-shadow);
-  z-index: 9999; // TODO add var
+  z-index: var(--z-index-overlay);
 `;
 
 const Loader = styled.div`

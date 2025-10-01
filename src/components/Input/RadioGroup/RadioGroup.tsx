@@ -14,7 +14,7 @@ const OptionsWrapper = styled.div`
   margin-top: 8px;
 `;
 
-type Option = { label: string; value: string; id?: string };
+type Option = { label: string; value: string; id?: string; testId?: string };
 
 type RadioGroupProps = {
   label?: string;
@@ -22,7 +22,6 @@ type RadioGroupProps = {
   options: Option[];
   rules?: RegisterOptions<FieldValues, string> | undefined;
   error?: string;
-  "data-testid"?: string;
 };
 
 export const RadioGroup = ({
@@ -31,7 +30,7 @@ export const RadioGroup = ({
   options,
   rules,
   error,
-  "data-testid": testId,
+  ...props
 }: RadioGroupProps) => {
   const { register } = useFormContext();
 
@@ -40,7 +39,7 @@ export const RadioGroup = ({
       {label && <Label htmlFor={name}>{label}</Label>}
 
       <OptionsWrapper
-        data-testid={testId}
+        {...props}
         role="radiogroup"
         aria-invalid={!!error}
         aria-describedby={error ? error : undefined}
@@ -53,6 +52,7 @@ export const RadioGroup = ({
             label={option.label}
             value={option.value}
             {...register(name, rules)}
+            data-testid={option.testId}
           />
         ))}
       </OptionsWrapper>

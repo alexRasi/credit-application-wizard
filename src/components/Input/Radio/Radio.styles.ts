@@ -11,7 +11,7 @@ export const RadioWrapper = styled.label`
 export const StyledRadio = styled.input.attrs({ type: "radio" })`
   width: 14px;
   height: 14px;
-  border: 1px solid #171717;
+  border: 1px solid var(--color-neutral-900);
   border-radius: var(--radius-full);
   cursor: pointer;
   position: relative;

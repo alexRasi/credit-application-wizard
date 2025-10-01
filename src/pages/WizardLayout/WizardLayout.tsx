@@ -43,7 +43,11 @@ export const WizardLayout = ({
   return (
     <WizardContent>
       <Header>
-        {back && <Back onClick={() => navigate(-1)}>{back}</Back>}
+        {back && (
+          <Back data-testid="back-button" onClick={() => navigate(-1)}>
+            {back}
+          </Back>
+        )}
         {title && <Heading1>{title}</Heading1>}
         <span />
       </Header>
@@ -52,6 +56,7 @@ export const WizardLayout = ({
         <Footer>
           {footerAddon}
           <Button
+            data-testid="cta-button"
             onClick={onCtaClick}
             onDisabledClick={onCtaDisabledClick}
             label={ctaLabel ?? "Next"}
