@@ -52,7 +52,6 @@ npm run format:check
 - TanStack Query - data fetching
 - Vite as the build tool and dev server
 - Styled Components for styling
-- @fontsource-variable/inter for typography
 - React Router DOM for routing
 - Storybook for component documentation and isolation
 - Vitest + Testing Library for unit and integration testing
