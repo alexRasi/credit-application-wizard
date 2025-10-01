@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Fairlo Frontend Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup Instructions
 
-Currently, two official plugins are available:
+Install dependencies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start development server:
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm run dev
 ```
+
+Run unit tests:
+
+```bash
+npm run test
+```
+
+Run end-to-end tests:
+
+```bash
+npm run test:e2e
+# or with UI runner
+npm run test:e2e:ui
+```
+
+Run Storybook:
+
+```bash
+npm run storybook
+```
+
+Lint and format:
+
+```bash
+npm run lint
+npm run lint:fix
+npm run format
+npm run format:check
+```
+
+---
+
+## Tooling & Libraries
+
+- React Hook Form – form handling and validation
+- Zustand – state management
+- TanStack Query - data fetching
+- Vite as the build tool and dev server
+- Styled Components for styling
+- @fontsource-variable/inter for typography
+- React Router DOM for routing
+- Storybook for component documentation and isolation
+- Vitest + Testing Library for unit and integration testing
+- Playwright for end-to-end testing
+- ESLint + Prettier for linting and code formatting
+- Husky for pre-commit hooks
+
+## Assumptions
+
+- Income is in euros (€), no currency provided
+- User can navigate to /applications page directly
+- Full name may include numbers since they are treated as characters
+- Border focus not provided in design tokens, using neutral-900
+- Terms checkbox and employment type radio have no error design, reused input error style
+
+---
+
+## Trade-offs
+
+- Network failures are not handled beyond default error state
+- Unit tests focus on core logic only
+- E2E tests cover main user flows and basic error scenarios
+
+---
+
+## Deployment
+
+Live URL: [https://credit-application-wizard.vercel.app/]
